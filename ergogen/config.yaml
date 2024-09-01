@@ -1,0 +1,67 @@
+points:
+  zones:
+    matrix:
+      columns:
+        mod:
+        pinky:
+          key.stagger: 2
+        ring:
+          key.stagger: 4
+        middle:
+          key.stagger: 2
+        index:
+          key.stagger: -4
+        inner:
+          key.stagger: -4
+      rows:
+        bottom:
+        home:
+        top:
+    thumbfan:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-55, -19]
+      columns:
+        conada: 
+        far:
+          key.spread: 21.25
+          key.splay: -5
+        from:
+          key.spread: 20.25
+          key.splay: -5
+          key.shift: [0, -1]
+        home:
+          key.spread: 20.25
+          key.splay: -5
+          key.shift: [0, -2]
+      rows:
+        thumb:
+  mirror:
+    ref: matrix_pinky_home
+    distance: 223.7529778
+outlines:
+  keys:
+    - what: rectangle
+      where: true
+      size: [cx + 2, cy + 2]
+      fillet: 2
+pcbs:
+  left:
+    outlines:
+      main:
+        outline: left
+    footprints:
+      keyswitches:
+        where: true
+        what: choc
+        params:
+          hotswap: true
+          from: "{{col_net}}"
+          to: "{{colrow}}"
+      nice_nano:
+        what: nice_nano
+        params:
+          orientation: up
+          where:
+            ref: matrix_inner_num
+            shift: [-9, -2]
